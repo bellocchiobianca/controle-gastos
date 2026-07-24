@@ -1,0 +1,76 @@
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+.menu {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+}
+.menu button{
+display: flex;
+gap: 12px;
+padding: 14px 18px;
+border-radius: 8px;
+color: whitesmoke;
+background-color: rgb(18, 18, 26);
+font-size:16px;
+justify-content: center;
+font-weight: bold;
+}
+.menu button:hover{
+  background-color: rgb(14, 1, 63);
+}
+
+table{
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td{
+    border:1px solid #666;
+    padding:8px 14px;
+}
+button{
+    cursor:pointer;
+}
