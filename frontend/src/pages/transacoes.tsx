@@ -90,7 +90,7 @@ if(!resposta.ok){
         <select value={pessoaId} onChange={(e)=>setPessoaId(Number(e.target.value))}>
             <option value={0}>Selecione</option>
             {listaPessoas.map(pessoa=>(<option key={pessoa.id} value={pessoa.id}>{pessoa.nome}</option>))}
-        </select>
+        </select> {/* A seleção é feita por uma lista de pessoas cadastradas para evitar erros de digitação e garantir que a transação seja vinculada a uma pessoa existente. */}
 
         <label>Tipo de Transação: </label>
         <select value={tipo} onChange={(e)=>setTipo(e.target.value)}><option value="Despesa">Despesa</option><option value="Receita">Receita</option></select>

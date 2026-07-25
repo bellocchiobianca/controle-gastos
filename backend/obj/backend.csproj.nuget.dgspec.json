@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\backend\\backend.csproj": {}
+    "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\controle-gastos\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\backend\\backend.csproj": {
+    "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\controle-gastos\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\controle-gastos\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\controle-gastos\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\bianc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\backend\\obj\\",
+        "outputPath": "C:\\Users\\bianc\\OneDrive\\Documentos\\FACULDADE\\GITHUB\\2. CONTROLE DE GASTOS - CSHARP - REACT E TYPESCRIPT\\controle-gastos\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bianc\\AppData\\Roaming\\NuGet\\NuGet.Config"

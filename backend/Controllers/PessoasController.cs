@@ -9,7 +9,7 @@ namespace controle_gastos.Controllers;
 [Route("api/[controller]")]
 public class PessoasController : ControllerBase
 {
-    private readonly AppDbContext _context; //conecta com o banco de dados para fazer consultas e gravações
+    private readonly AppDbContext _context; //Representa o acesso ao banco de dados para realizar consultas e alterações.
 
     public PessoasController(AppDbContext context)
     {
@@ -20,7 +20,7 @@ public class PessoasController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Pessoa>>> GetPessoas()
     {
-        return await _context.Pessoas.ToListAsync();
+        return await _context.Pessoas.ToListAsync(); //seria o equivalente a SELECT * FROM Pessoas no SQL, "traduzido" pelo entity
     }
 
     // POST: Cadastra uma nova pessoa
@@ -30,11 +30,11 @@ public class PessoasController : ControllerBase
         _context.Pessoas.Add(pessoa);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetPessoas), new { id = pessoa.Id }, pessoa);
+        return CreatedAtAction(nameof(GetPessoas), new { id = pessoa.Id }, pessoa); //cadastro criado
     }
 
     //DELETE: exclui a pessoa e todas as suas transações
-    [HttpDelete("{id}")]
+    [HttpDelete("{id}")] //pesquisa a pessoa pelo ID, como um /api/Pessoas/id 
 public async Task<IActionResult> DeletePessoa(int id)
 {
     var pessoa = await _context.Pessoas.FindAsync(id);
@@ -45,11 +45,11 @@ public async Task<IActionResult> DeletePessoa(int id)
     }
 
     var transacoes = _context.Transacoes
-        .Where(t => t.PessoaId == id);
+        .Where(t => t.PessoaId == id);//procura todas as transações relacionadas aquela pessoa
 
-    _context.Transacoes.RemoveRange(transacoes);
+    _context.Transacoes.RemoveRange(transacoes);//apaga varias transações de uma vez
 
-    _context.Pessoas.Remove(pessoa);
+    _context.Pessoas.Remove(pessoa);//apaga a pessoa
 
     await _context.SaveChangesAsync();
 
@@ -68,7 +68,7 @@ public async Task<IActionResult> DeletePessoa(int id)
         var resultado = pessoas.Select(p => new
         {
             Pessoa = p.Nome,
-
+            
             TotalReceitas = p.Transacoes
                 .Where(t => t.Tipo.ToLower() == "receita")
                 .Sum(t => t.Valor),

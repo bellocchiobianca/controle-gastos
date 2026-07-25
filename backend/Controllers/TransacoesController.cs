@@ -36,12 +36,13 @@ public class TransacoesController : ControllerBase
         if (pessoa == null)
         {
             return NotFound("Pessoa não encontrada.");
+            //O identificador precisa existir no cadastro de pessoas, se não existir, o usuário não consegue cadastrar.
         }
 
 
         // bloqueia um menor de idade cadastrar uma receita
-        if (pessoa.Idade < 18 && transacao.Tipo.ToLower() == "receita")
-        {
+        if (pessoa.Idade < 18 && transacao.Tipo.ToLower() == "receita")//verifica se a pessoa é maior de idade e se o tipo da transação é receita
+        {//se as duas condições forem verdadeiras, não será possível cadastrar a transação
             return BadRequest("Menores de idade não podem cadastrar receitas.");
         }
 

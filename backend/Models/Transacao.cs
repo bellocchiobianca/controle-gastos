@@ -8,11 +8,11 @@ public class Transacao
 
     public string Descricao { get; set; } = string.Empty;
 
-    public decimal Valor { get; set; }
+    public decimal Valor { get; set; } //o uso do decimal é mais adequado para valores financeiros, pois o double utiliza base binária e poderia dificultar na representação de frações simples, como erros de arredondamentos
 
     public string Tipo { get; set; } = string.Empty;
 
     public int PessoaId { get; set; } //chave estrangeira que guarda o id da pessoa que fez a transação
 
-    public Pessoa? Pessoa { get; set; } //permite acessar os dados completos da pessoa associada a transação quando necessario
+    public Pessoa? Pessoa { get; set; } //mantenho o ? para informar ao compilador que a propriedade pode estar nula até que o Entity Framework carregue os dados da pessoa do banco.
 }

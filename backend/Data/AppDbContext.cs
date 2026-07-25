@@ -13,7 +13,7 @@ public DbSet<Transacao> Transacoes {get; set;}
 
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
-    modelBuilder.Entity<Transacao>()
+    modelBuilder.Entity<Transacao>() //configura o relacionamento entre Pessoa e Transação e define o comportamento ao excluir registros.
         .HasOne(t => t.Pessoa)
         .WithMany(p => p.Transacoes)
         .HasForeignKey(t => t.PessoaId)
