@@ -46,10 +46,10 @@ async function carregarPessoas(){
 
  async function cadastrarTransacoes(){
     if (descricao === ''){return alert ("Obrigatório o preenchimento")}
-    if (Number(valor) <=0){return alert("O valor não pode ser menor ou igual a zero")}
+    if (Number(valor) <=0){return alert("O valor não pode ser menor ou igual a zero")}//evita o cadastro de valores negativos
     if (pessoaId ===0) {return alert ("Obrigatório selecionar pessoa responsável pela despesa")}
     
-  /*da erro quando tenta lançar uma receita para menor de idade*/
+  //da erro quando tenta lançar uma receita para menor de idade
     const resposta = await fetch(`${API}/Transacoes`, {
     method:"POST",
     headers:{
@@ -65,7 +65,7 @@ async function carregarPessoas(){
 
 if(!resposta.ok){
     const erro = await resposta.text()
-    return alert(erro)
+    return alert(erro)//se a API retornar erro (menor de idade tentando cadastrar receita), exibe a mensagem enviada pelo backend
 }
         setDescricao('');setValor('');setPessoaId(0);setTipo('Despesa')
     
@@ -103,7 +103,7 @@ if(!resposta.ok){
         <ul>
     {listaTransacoes.map(transacao => {const pessoa = listaPessoas.find(
         pessoa => pessoa.id === transacao.pessoaId
-    )
+    )//procura na lista de pssoas aquela cujo ID corresponde ao PessoaID da transação, para exibir o nome em vez do número
     return (
         <li key={transacao.id}>
             {transacao.descricao} - R$ {transacao.valor} - {transacao.tipo} - {pessoa?.nome}</li>

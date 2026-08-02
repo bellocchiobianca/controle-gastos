@@ -29,7 +29,7 @@ async function cadastrarPessoa(){
 
     if(nome===''){
         return alert("Obrigatório preencher nome")
-    }
+    }//impede o cadastro de pessoa sem nome (nome vazio)
 
     await fetch(`${API}/Pessoas`,
     {
@@ -49,7 +49,7 @@ async function cadastrarPessoa(){
 }
 
 async function excluirPessoa(id:number){
-    if(!confirm("Deseja excluir essa pessoa?"))
+    if(!confirm("Deseja excluir essa pessoa?"))//pede confirmação antes de excluir a pessoa
         return; await fetch (`${API}/Pessoas/${id}`,{
         method:"DELETE"});
 
